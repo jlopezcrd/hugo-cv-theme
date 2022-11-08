@@ -1,0 +1,17 @@
+{{ range $.Site.Params.works }}
+
+  <div class="item">
+    <h3>
+        {{ .title }} <span>@ {{ .company }}</span>
+    </h3>
+    <span>
+      {{ if .current }}
+        {{ .date_start }} - <span class="label label-primary">Current</span>
+      {{ else }}
+        {{ .date_start }} - {{ .date_end }}</span>
+      {{ end }}
+    </span>
+    <p class="edit-area">{{ .description }}</p>
+  </div>
+
+{{ end }}
