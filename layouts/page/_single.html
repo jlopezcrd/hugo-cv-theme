@@ -11,13 +11,27 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-      <div class="container">
-        <div class="row">
-          {{ partial "navbar/navbar.html" . }}
-          {{- block "main" . }}{{- end }}
-        </div>
+    <div class="container">
+      <div class="row">
+        {{ partial "navbar/navbar.html" . }}
+
+        {{ partial "sidebar/sidebar.html" . }}
+
+        {{ .Content }}
+
+        {{ partial "content/content.html" . }}
       </div>
-      {{ partial "footer/footer.html" . }}
-      {{ partial "scripts/scripts.html" . }}
+
+      {{ partial "timeline/timeline.html" . }}
+
+      <!-- {{ partial "contact/contact.html" . }} -->
+
+      <hr>
+
+    </div>
+
+    {{ partial "footer/footer.html" . }}
+
+    {{ partial "scripts/scripts.html" . }}
   </body>
 </html>

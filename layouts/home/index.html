@@ -1,0 +1,77 @@
+{{ define "main" }}
+    <div class="container hide" id="list-files">
+        <!-- <h1><span class="prompt-green">$</span> :> <input type="text" class="terminal-command" value="ls -lah ./"></h1> -->
+        <h1>
+            <span class="prompt-green">{{ $.Site.Params.prompt.user }}</span><span class="prompt-orange">{{ $.Site.Params.prompt.separator }}</span><span class="hidden-xs"><span class="prompt-blue">{{ $.Site.Params.prompt.directory }}</span></span><span class="prompt-white">{{ $.Site.Params.prompt.role }}</span>
+        </h1>
+        <h3><span class="prompt-green">$</span>:<span class="hidden-xs">(<span class="prompt-orange">eu-west-1</span>):[<span class="prompt-green">main</span>]:</span><span class="prompt-blue">></span> <input type="text" class="terminal-command" value="ls -lah "></h1>
+        <!-- {{ .Date.Format "Jan" | lower }}  {{ .Date.Format "02" }} -->
+        <!-- <div class="col-12">
+            dr-xr-xr-x  1 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span>  <a href="/es" class="prompt-blue"><span class="terminal-folder">../es</span></a>
+        </div>
+        <div class="col-12">
+            dr-xr-xr-x  1 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span>  <a href="/en" class="prompt-blue"><span class="terminal-folder">../en</span></a>
+        </div> -->
+        <div class="col-12 file">
+           dr-xr-xr-x<span class="hidden-xs"> 1 guest users 283K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/en" class="terminal-folder">.</a>
+        </div>
+        <div class="col-12 file">
+           dr-xr-xr-x<span class="hidden-xs"> 4 guest users 987K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/" class="terminal-folder">..</a>
+        </div>
+        <div class="col-12 file">
+           dr-xr-xr-x<span class="hidden-xs"> 1 guest users 482K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/aws" class="terminal-folder">.aws</a>
+        </div>
+        <div class="col-12 file">
+           dr-xr-xr-x<span class="hidden-xs"> 1 guest users 571K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/git" class="terminal-folder">.git</a>
+        </div>
+        <div class="col-12 file">
+           dr-xr-xr-x<span class="hidden-xs"> 1 guest users 283K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/ssh" class="terminal-folder">.ssh</a>
+        </div>
+        <div class="col-12 file">
+           -r--r--r--<span class="hidden-xs"> 1 guest users 172K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/zshrc" class="terminal-file-hidden">.zshrc</a>
+        </div>
+        <div class="col-12 file">
+           -r--r--r--<span class="hidden-xs"> 1 guest users 187K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/about.html" class="prompt-white">about.html</a><br />
+        </div>
+        <div class="col-12 file">
+           -r--r--r--<span class="hidden-xs"> 1 guest users 164K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/cv.html" class="prompt-white">cv.html</a><br />
+        </div>
+        <div class="col-12 file">
+           -r--r--r--<span class="hidden-xs"> 1 guest users 129K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/my-tools.html" class="prompt-white">my-tools.html</a>
+        </div>
+        <div class="col-12 file">
+           -r--r--r--<span class="hidden-xs"> 1 guest users 196K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/technologies.html" class="prompt-white">technologies.html</a>
+        </div>
+        <div class="col-12 file">
+           -r-xr-xr-x<span class="hidden-xs"> 1 guest users 237K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/es" class="prompt-green">change-language.sh</a><br />
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 4 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="/" class="prompt-blue">
+                <span class="terminal-link">home</span></a> -> <span class="terminal-folder">/var/www</span>
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 2 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="https://tu.arquitecto.cloud" class="prompt-blue">
+                <span class="terminal-link">arquitecto</span></a> -> <span class="terminal-folder">/mnt/tu.arquitecto.cloud</span>
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 2 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="https://bitbucket.com" class="prompt-blue">
+                <span class="terminal-link">bitbucket</span></a> -> <span class="terminal-folder">/mnt/bitbucket.com</span>
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 2 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="https://github.com" class="prompt-blue">
+                <span class="terminal-link">github</span></a> -> <span class="terminal-folder">/mnt/github.com</span>
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 2 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="https://linkedin.com" class="prompt-blue">
+                <span class="terminal-link">linkedin</span></a> -> <span class="terminal-folder">/mnt/linkedin.com</span>
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 2 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="https://twitter.com/jlopezcrd" class="prompt-blue">
+                <span class="terminal-link">twitter</span></a> -> <span class="terminal-folder">/mnt/twitter.com</span>
+        </div>
+        <div class="col-12 file">
+           lr-xr-xr-x<span class="hidden-xs"> 8 guest users 100K <span class="month"></span>  <span class="day"></span> <span class="time"></span></span>  <a href="mailto:{{ $.Site.Params.email }}" class="prompt-blue">
+                <span class="terminal-link">mail</span></a> -> <span class="terminal-folder">/var/spool/mail</span>
+        </div>
+    </div>
+{{ end }}

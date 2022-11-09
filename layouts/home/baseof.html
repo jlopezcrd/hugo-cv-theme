@@ -6,18 +6,17 @@
     <head>
         {{ partial "head/head.html" . }}
     </head>
-    <body>
+    <body class="background-terminal">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-      <div class="container">
-        <div class="row">
-          {{ partial "navbar/navbar.html" . }}
-          {{- block "main" . }}{{- end }}
+        <div class="container">
+            <div class="row">
+                {{ partial "navbar/navbar-home.html" . }}
+                {{- block "main" . }}{{- end }}
+            </div>
         </div>
-      </div>
-      {{ partial "footer/footer.html" . }}
-      {{ partial "scripts/scripts.html" . }}
+        {{ partial "scripts/scripts.html" . }}
   </body>
 </html>
